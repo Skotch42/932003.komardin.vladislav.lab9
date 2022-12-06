@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 9</title>
+    <script src="Lab9.js"></script>
+
+    <style>
+
+        body 
+        {
+            display: inline-block;
+            font-family: "Arial";
+            margin: 0;
+            box-sizing: border-box;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .container 
+        {
+            display: grid;
+            margin: auto;
+            grid-template-columns: 50px 50px 50px 50px 50px;
+            grid-template-rows: 40px 50px 50px 50px 50px;
+            grid-template-areas:
+                "display display display display display"
+                "digit7  digit8  digit9  slash   C"
+                "digit4  digit5  digit6  star    back"
+                "digit1  digit2  digit3  minus   equality"
+                "digit0  digit0  dot     plus    equality";
+            grid-gap: 5px;
+            padding: 8px;
+            border: 5px lightskyblue solid;
+            width: auto;
+            margin-right: auto;
+        }
+
+        .container > * 
+        {
+            font-size: large;
+        }
+
+        .display 
+        {
+            display: flex;
+            justify-content: flex-end;
+            grid-area: display;
+            text-align: right;
+            color: gray;
+            border: black 1px solid;
+            padding: 5px;
+        }
+
+        .display > * 
+        {
+            margin: auto 0 auto 5px;
+        }
+
+        span:last-child 
+        {
+            color: black;
+        }
+
+        .equality 
+        {
+            grid-area: equality;
+        }
+
+        .digit0 
+        {
+            grid-area: digit0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="display" id="display"></div>
+
+        <button onclick="onClickListener(this)"><b>7</b></button>
+        <button onclick="onClickListener(this)"><b>8</b></button>
+        <button onclick="onClickListener(this)"><b>9</b></button>
+        <button onclick="onClickListener(this)"><b>/</b></button>
+        <button onclick="onClickListener(this)"><b>C</b></button>
+
+        <button onclick="onClickListener(this)"><b>4</b></button>
+        <button onclick="onClickListener(this)"><b>5</b></button>
+        <button onclick="onClickListener(this)"><b>6</b></button>
+        <button onclick="onClickListener(this)"><b>*</b></button>
+        <button onclick="onClickListener(this)"><-</button>
+
+        <button onclick="onClickListener(this)"><b>1</b></button>
+        <button onclick="onClickListener(this)"><b>2</b></button>
+        <button onclick="onClickListener(this)"><b>3</b></button>
+        <button onclick="onClickListener(this)"><b>-</b></button>
+
+        <button onclick="onClickListener(this)" class="equality"><b>=</b></button>
+        <button onclick="onClickListener(this)" class="digit0"><b>0</b></button>
+        <button onclick="onClickListener(this)"><b>.</b></button>
+        <button onclick="onClickListener(this)"><b>+</b></button>
+
+    </div>
+
+</body>
+</html>
