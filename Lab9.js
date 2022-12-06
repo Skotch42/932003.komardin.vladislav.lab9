@@ -36,10 +36,12 @@ function onClickListener(button)
         case "<-":
 
             let len = span.textContent.length;
+            
             if (len > 1)
             {
                 span.textContent = span.textContent.substr(0, len - 1);
-            } else
+            } 
+            else
             {
                 span.remove();
             }
@@ -50,7 +52,8 @@ function onClickListener(button)
         case "/":
         case "-":
 
-            if (isNumber(span.textContent)) {
+            if (isNumber(span.textContent)) 
+            {
                 let newSpan = document.createElement("span");
                 span.after(newSpan);
                 newSpan.textContent = buttonText;
@@ -84,7 +87,8 @@ function onClickListener(button)
 
         default:
 
-            if (!isNumber(span.textContent)) {
+            if (!isNumber(span.textContent)) 
+            {
                 let newSpan = document.createElement("span");
                 span.after(newSpan);
                 span = newSpan;
